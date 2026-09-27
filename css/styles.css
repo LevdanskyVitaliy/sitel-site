@@ -153,6 +153,7 @@ section + section { border-top: 1px solid var(--border); }
   color: #fff; font-weight: 900; font-size: 18px; font-family: 'Merriweather', serif; 
 }
 .logo-text { font-family: 'Merriweather', serif; font-weight: 900; font-size: 18px; color: var(--text-primary); }
+.logo-text-icon { padding-top: 0.5rem; }
 
 .nav-links { display: flex; gap: 24px; align-items: center; }
 .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; }
