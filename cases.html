@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отрасли и бизнес-задачи — Sitel</title>
+  <meta name="description" content="Отраслевые решения платформы Sitel: ритейл и E-commerce, финансы и банки, медицина, телеком и ЖКХ, корпоративный B2B. Голосовые и текстовые боты, речевая аналитика и документооборот на базе векторной БД в закрытом контуре.">
+  
+  <meta property="og:title" content="Отрасли и бизнес-задачи — Sitel">
+  <meta property="og:description" content="Пять отраслевых решений платформы комплексной ИИ-тизации: сценарии, эффект для бизнеса и архитектура закрытого контура.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/og-preview.png">
+  <meta property="og:url" content="/cases.html">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231D4ED8'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='58' font-family='Georgia' font-weight='900'>S</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">S</div><span class="logo-text">Sitel</span></a>
+    <nav class="nav-links">
+      <div class="dropdown" id="products-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')">Платформы</button>
+        <div class="dropdown-menu">
+          <a href="index.html">Речевая аналитика</a>
+          <a href="platforms/auto-order.html">Умный автозаказ</a>
+          <a href="platforms/docs.html">Документооборот</a>
+        </div>
+      </div>
+      <a href="cases.html" style="color:var(--blue-700);font-weight:600;">Отрасли</a>
+      <a href="security.html">Безопасность</a>
+      <a href="architecture.html">Архитектура</a>
+    </nav>
+    <div class="header-actions">
+      <a href="downloads/sitel-presentation.pdf" download class="btn btn-outline btn-sm">PDF</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Запросить демо</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="Меню">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
+    <div class="mobile-submenu">
+      <a href="index.html" onclick="closeMobile()">Речевая аналитика</a>
+      <a href="platforms/auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
+      <a href="platforms/docs.html" onclick="closeMobile()">Документооборот</a>
+    </div>
+    <a href="cases.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Отрасли</a>
+    <a href="security.html" onclick="closeMobile()">Безопасность</a>
+    <a href="architecture.html" onclick="closeMobile()">Архитектура</a>
+    <a href="contact.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Запросить демо →</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-blue" style="margin-bottom:12px;">СФЕРЫ ПРИМЕНЕНИЯ</span>
+    <h1>Отрасли и бизнес-задачи</h1>
+    <p>Платформа комплексной ИИ-тизации решает прикладные задачи контакт-центров, операционных отделов, клиентских служб и документооборота в строгом соответствии с требованиями безопасности и регуляторов.</p>
+  </div>
+</section>
+
+<!-- Секция бизнес-задач платформы (Слайд 15) -->
+<section style="background:#F1F5F9;padding:48px 0;">
+  <div class="container">
+    <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
+      <span class="badge badge-teal" style="margin-bottom:8px;">МНОГОФУНКЦИОНАЛЬНОСТЬ</span>
+      <h2 style="font-size:1.85rem;margin-bottom:12px;">Процессы и задачи, которые решает платформа</h2>
+      <p style="font-size:15px;color:var(--text-muted);">Единая инфраструктура на базе векторной БД и речевого интеллекта автоматизирует рутину, высвобождая ресурсы ключевых специалистов.</p>
+    </div>
+    <div class="features-grid" style="grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;">
+      <div class="card" style="padding:20px;border-left:4px solid var(--blue-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Автоматизация контакт-центров</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">100% контроль качества, выявление нарушений, эмоциональная динамика и объективная оценка операторов.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--blue-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Голосовые и текстовые боты</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Входящие и исходящие сценарии, обработка перебиваний, настраиваемый синтез речи, эскалация на операторов без потери контекста.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--blue-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Автоматизация совещаний</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Стенографирование встреч, разделение участников по слепкам голосов (голосовая биометрия), протоколирование и поручения.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--blue-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Разговоры персонала с клиентами</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Анализ очных диалогов в офисах продаж и отделениях через аудиорегистраторы: чек-листы, выявление потребностей, допродажи.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--teal-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Входящая корреспонденция</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Автоматическая обработка претензий, извлечение сути требований, маршрутизация и подготовка ответов на письма и обращения.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--teal-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Внутренний документооборот</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Контроль сроков и исполнения поручений, автоматическая сверка договоров, маршрутизация согласований и интеграция с ERP/1C.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--teal-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Помощник по базам знаний</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Корпоративный ассистент с RAG-поиском по внутренним регламентам, каталогам и документам без передачи данных наружу.</p>
+      </div>
+      <div class="card" style="padding:20px;border-left:4px solid var(--teal-600);">
+        <h4 style="font-size:16px;margin-bottom:8px;color:#0F172A;">Обучение и адаптация сотрудников</h4>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.5;">Формирование «плейбуков лучших ответов», разбор типовых ошибок, персонализированные рекомендации и тренажеры диалогов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div style="text-align:center;max-width:760px;margin:0 auto 40px;">
+      <span class="badge badge-blue" style="margin-bottom:8px;">ПРОФИЛЬНЫЕ СЦЕНАРИИ</span>
+      <h2 style="font-size:1.85rem;margin-bottom:12px;">Решения для ключевых отраслей</h2>
+      <p style="font-size:15px;color:var(--text-muted);">Каждая отрасль имеет свою специфику словарей, регламентов и требований безопасности данных. Платформа адаптируется без программирования.</p>
+    </div>
+
+    <!-- Отрасль 1: Ритейл и E-commerce -->
+    <div class="case-card-large" style="margin-bottom:32px;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:12px;">РИТЕЙЛ И ЭЛЕКТРОННАЯ КОММЕРЦИЯ</span>
+        <p class="case-meta">Крупные торговые сети · Маркетплейсы · Службы доставки · Десятки КЦ</p>
+        <h3 style="margin-bottom:16px;">Масштабирование сервиса и сглаживание пиковых нагрузок</h3>
+        <div class="case-problem">
+          <strong style="display:block;margin-bottom:8px;color:#0F172A;">Специфика отрасли:</strong>
+          <span style="color:#334155;">Высокая сезонность и пиковые нагрузки во время акций, текучесть линейного персонала, необходимость моментального распознавания номеров заказов, сумм, адресов и статусов доставки.</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;"><strong style="color:#0F172A;">Ключевые сценарии:</strong> голосовой робот для статусов заказов и переноса времени доставки (до 60% рутины); автоматический парсинг расписаний и 1C/ERP; 100% контроль скриптов операторов (акции, допродажи, вежливость).</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong style="color:#0F172A;">Эффект для бизнеса:</strong> удержание Service Level в дни распродаж без найма временных сотрудников, сокращение времени обработки звонка, рост конверсии в повторные покупки.</p>
+      </div>
+      <div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-box">
+            <div class="value">95%</div>
+            <div class="label">точность распознавания речи</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">до 60%</div>
+            <div class="label">автоматизация звонков ботом</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">100%</div>
+            <div class="label">контроль чеклистов и акций</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">0 руб.</div>
+            <div class="label">затрат на GPU для базы</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;padding:12px;background:#F1F5F9;border-radius:8px;"><strong>Архитектура:</strong> работа базового контура транскрибации и классификации на CPU без обращения к внешним облакам.</p>
+      </div>
+    </div>
+
+    <!-- Отрасль 2: Финансы, банки и страхование -->
+    <div class="case-card-large" style="margin-bottom:32px;">
+      <div>
+        <span class="badge badge-teal" style="margin-bottom:12px;">ФИНАНСЫ, БАНКИ И СТРАХОВАНИЕ</span>
+        <p class="case-meta">Банки ТОП-50 · Страховые компании · Инвестиционные сервисы · МФО</p>
+        <h3 style="margin-bottom:16px;">100% комплаенс, защита тайны и противодействие рискам</h3>
+        <div class="case-problem">
+          <strong style="display:block;margin-bottom:8px;color:#0F172A;">Специфика отрасли:</strong>
+          <span style="color:#334155;">Строгие требования банковской тайны, 152-ФЗ, нормативы ЦБ РФ. Необходимость контроля обязательных уведомлений клиентов, предотвращения навязывания услуг и выявления конфликтных точек.</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;"><strong style="color:#0F172A;">Ключевые сценарии:</strong> комплаенс-контроль 100% диалогов на обязательные фразы и запрещенные формулировки; разделение говорящих по голосу; автоматический разбор претензий и жалоб; интеграция с внутренней CRM/биллингом через закрытые API.</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong style="color:#0F172A;">Эффект для бизнеса:</strong> минимизация регуляторных штрафов, прозрачная калибровка оценок операторов с супервизорами (точность ≥85%), безопасность персональных данных в закрытом контуре.</p>
+      </div>
+      <div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-box">
+            <div class="value">100%</div>
+            <div class="label">комплаенс-аудит звонков</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">≥90%</div>
+            <div class="label">точность распознавания интентов</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">152-ФЗ</div>
+            <div class="label">полный закрытый контур</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">≥85%</div>
+            <div class="label">совпадение с супервизорами</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;padding:12px;background:#F1F5F9;border-radius:8px;"><strong>Изоляция:</strong> развертывание On-Premise без внешних сетевых вызовов. Голосовая биометрия для идентификации сотрудников.</p>
+      </div>
+    </div>
+
+    <!-- Отрасль 3: Медицина и фармацевтика -->
+    <div class="case-card-large" style="margin-bottom:32px;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:12px;">МЕДИЦИНА И СЕТИ КЛИНИК</span>
+        <p class="case-meta">Федеральные и региональные медцентры · Сети лабораторий · Стоматологии</p>
+        <h3 style="margin-bottom:16px;">Максимальная заполняемость слотов врачей и вежливый сервис</h3>
+        <div class="case-problem">
+          <strong style="display:block;margin-bottom:8px;color:#0F172A;">Специфика отрасли:</strong>
+          <span style="color:#334155;">Потеря первичных пациентов при пропущенных звонках или долгом ожидании ответа, сложные медицинские термины и названия препаратов, чувствительность к врачебной тайне.</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;"><strong style="color:#0F172A;">Ключевые сценарии:</strong> голосовой ассистент записи на прием с проверкой расписания в МИС; автоматическое подтверждение визитов и напоминания; анализ причин отказов от записей; подключение медицинского словаря заказчика без переустановки системы.</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong style="color:#0F172A;">Эффект для бизнеса:</strong> устранение «окон» в расписании специалистов, рост заполняемости вечерних слотов, сохранение лояльности пациентов в сложных эмоциональных ситуациях.</p>
+      </div>
+      <div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-box">
+            <div class="value">24/7</div>
+            <div class="label">прием звонков и запись к врачу</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">+20%</div>
+            <div class="label">заполняемость вечерних окон</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">95%</div>
+            <div class="label">понимание мед. лексики</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">3 нед.</div>
+            <div class="label">от пилота до результата</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;padding:12px;background:#F1F5F9;border-radius:8px;"><strong>Гибкость:</strong> возможность старта по SaaS/подписке с последующей бесшовной миграцией в собственный серверный контур.</p>
+      </div>
+    </div>
+    <!-- Отрасль 4: Телеком, ЖКХ и сервисные службы -->
+    <div class="case-card-large" style="margin-bottom:32px;">
+      <div>
+        <span class="badge badge-teal" style="margin-bottom:12px;">ТЕЛЕКОМ, ЖКХ И СЕРВИСНЫЕ КОМПАНИИ</span>
+        <p class="case-meta">Операторы связи · Управляющие компании · Единые диспетчерские службы</p>
+        <h3 style="margin-bottom:16px;">Массовый прием показаний, аварийные сценарии и диспетчеризация</h3>
+        <div class="case-problem">
+          <strong style="display:block;margin-bottom:8px;color:#0F172A;">Специфика отрасли:</strong>
+          <span style="color:#334155;">Массовые пики в отчетные дни месяца (передача показаний приборов), шквал звонков при аварийных отключениях, необходимость точного распознавания цифр и адресов.</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;"><strong style="color:#0F172A;">Ключевые сценарии:</strong> автоматический сбор показаний счетчиков и номеров лицевых счетов с машиночитаемой нормализацией; информирование по аварийным адресам по номеру абонента; автоформирование заявок диспетчерам.</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong style="color:#0F172A;">Эффект для бизнеса:</strong> разгрузка первой линии на 70–80%, моментальная реакция на аварии без перегрузки телефонных линий, исключение ошибок ручного ввода цифр.</p>
+      </div>
+      <div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-box">
+            <div class="value">100%</div>
+            <div class="label">нормализация показаний и счетов</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">до 80%</div>
+            <div class="label">звонков обрабатывает робот</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">×10</div>
+            <div class="label">запас по пиковой нагрузке</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">&lt; 1 сек</div>
+            <div class="label">время ответа абоненту</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;padding:12px;background:#F1F5F9;border-radius:8px;"><strong>Интеграция:</strong> готовые коннекторы к биллинговым системам, базам 1С и телефонии SIP/Asterisk без замены оборудования.</p>
+      </div>
+    </div>
+
+    <!-- Отрасль 5: Корпоративный сектор и B2B -->
+    <div class="case-card-large" style="margin-bottom:32px;">
+      <div>
+        <span class="badge badge-blue" style="margin-bottom:12px;">КОРПОРАТИВНЫЙ СЕКТОР И B2B</span>
+        <p class="case-meta">Крупные холдинги · Промышленные предприятия · Проектные институты</p>
+        <h3 style="margin-bottom:16px;">Стенографирование совещаний, контроль поручений и корпоративные агенты</h3>
+        <div class="case-problem">
+          <strong style="display:block;margin-bottom:8px;color:#0F172A;">Специфика отрасли:</strong>
+          <span style="color:#334155;">Сотни часов внутренних совещаний в неделю, потери договоренностей, длительный поиск информации во внутренних регламентах и регламентах безопасности.</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;"><strong style="color:#0F172A;">Ключевые сценарии:</strong> автоматическое протоколирование встреч с разделением участников по голосам; выделение сути задач и дедлайнов; внутренний ИИ-ассистент по корпоративной базе знаний на базе векторной БД.</p>
+        <p style="font-size:14px;color:var(--text-muted);"><strong style="color:#0F172A;">Эффект для бизнеса:</strong> сокращение времени на подготовку протоколов с часов до минут, прозрачный контроль поручений руководства, быстрый онбординг новых специалистов.</p>
+      </div>
+      <div>
+        <div class="case-metrics-grid">
+          <div class="case-metric-box">
+            <div class="value">Векторная БД</div>
+            <div class="label">ядро корпоративного RAG</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">Биометрия</div>
+            <div class="label">разделение голосов участников</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">Контур</div>
+            <div class="label">закрытая среда предприятия</div>
+          </div>
+          <div class="case-metric-box">
+            <div class="value">10+ задач</div>
+            <div class="label">на единой платформе</div>
+          </div>
+        </div>
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;padding:12px;background:#F1F5F9;border-radius:8px;"><strong>Безопасность:</strong> коммерческая тайна и персональные данные сотрудников защищены локальным выполнением без внешних LLM.</p>
+      </div>
+    </div>
+
+
+    <div class="card" style="background:#EFF6FF;border-color:#DBEAFE;text-align:center;padding:36px 24px;">
+      <h3 style="margin-bottom:12px;font-size:1.5rem;">Нужен пилот под вашу отрасль?</h3>
+      <p style="font-size:14px;color:var(--text-muted);max-width:680px;margin:0 auto 20px;">Проведем демонстрацию платформы на ваших реальных записях звонков или документах. Протестируем точность распознавания и подготовим расчет архитектуры под ваши объемы.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary">Запросить демонстрацию платформы</a>
+        <a href="downloads/sitel-presentation.pdf" download class="btn btn-outline">Скачать презентацию (PDF)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top-grid">
+      
+      <!-- Колонка 1: Контакты -->
+      <div class="footer-info-block">
+        <h4>ПРЯМАЯ СВЯЗЬ</h4>
+        <div class="contact-item">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+      </div>
+      
+      <!-- Колонка 2: Платформы -->
+      <div class="footer-info-block">
+        <h4>ПЛАТФОРМЫ</h4>
+        <a href="index.html">Речевая аналитика</a>
+        <a href="platforms/auto-order.html">Умный автозаказ</a>
+        <a href="architecture.html">Архитектура</a>
+        <a href="platforms/auto-order.html">Оборудование</a>
+      </div>
+
+      <!-- Колонка 3: Компания -->
+      <div class="footer-info-block">
+        <h4>КОМПАНИЯ</h4>
+        <a href="cases.html">Отрасли</a>
+        <a href="security.html">Безопасность</a>
+      </div>
+
+      <!-- Колонка 4: Документы -->
+      <div class="footer-info-block">
+        <h4>ДОКУМЕНТЫ</h4>
+        <a href="privacy.html">Политика ПД</a>
+        <a href="privacy.html">Пользовательское соглашение</a>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span>© 2026 Sitel</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Mobile menu
+function closeMobile() { 
+  document.getElementById('mobile-menu').classList.remove('open'); 
+}
+
+// Dropdown
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  if (!dropdown) return;
+  dropdown.classList.toggle('open');
+}
+
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.dropdown.open').forEach(d => {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || this.getAttribute('onclick')) return;
+    const target = document.querySelector(href);
+    if (target) { 
+      e.preventDefault(); 
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); 
+      closeMobile(); 
+    }
+  });
+});
+</script>
+</body>
+</html>

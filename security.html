@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Безопасность и соответствие — Sitel</title>
+  <meta name="description" content="Архитектурная суверенность данных: 152-ФЗ, реестр отечественного ПО, ФСТЭК. Схема потоков данных для трёх контуров развёртывания.">
+  
+  <meta property="og:title" content="Безопасность и соответствие — Sitel">
+  <meta property="og:description" content="Данные не покидают ваш контур. Схема потоков, обезличивание, сертификаты.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/og-preview.png">
+  <meta property="og:url" content="/security.html">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231D4ED8'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='58' font-family='Georgia' font-weight='900'>S</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+
+</head>
+
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">S</div><span class="logo-text">Sitel</span></a>
+    <nav class="nav-links">
+      <div class="dropdown" id="products-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
+        <div class="dropdown-menu">
+          <a href="index.html">Речевая аналитика</a>
+          <a href="platforms/auto-order.html">Умный автозаказ</a>
+          <a href="platforms/docs.html">Документооборот</a>
+        </div>
+      </div>
+      <a href="cases.html">Отрасли</a>
+      <a href="security.html" style="color:var(--blue-700);font-weight:600;">Безопасность</a>
+      <a href="architecture.html">Архитектура</a>
+    </nav>
+    <div class="header-actions">
+      <a href="downloads/sitel-presentation.pdf" download class="btn btn-outline btn-sm">PDF</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Запросить демо</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="Меню">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
+    <div class="mobile-submenu">
+      <a href="index.html" onclick="closeMobile()">Речевая аналитика</a>
+      <a href="platforms/auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
+      <a href="platforms/docs.html" onclick="closeMobile()">Документооборот</a>
+    </div>
+    <a href="cases.html" onclick="closeMobile()">Отрасли</a>
+    <a href="security.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Безопасность</a>
+    <a href="architecture.html" onclick="closeMobile()">Архитектура</a>
+    <a href="contact.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Запросить демо →</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-blue" style="margin-bottom:12px;">БЕЗОПАСНОСТЬ</span>
+    <h1>Суверенность данных — архитектурное обязательство</h1>
+    <p>Для продукта, который продаётся фразой «данные остаются у вас», это главный раздел. Ниже — что именно происходит с данными в каждой форме развёртывания, и какие нормативные требования закрываются.</p>
+  </div>
+</section>
+
+<!-- ПРИНЦИПЫ -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">ПРИНЦИПЫ</span>
+      <h2>Четыре уровня защиты</h2>
+    </div>
+    <div class="features-grid">
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">🔒 Хранение — только у вас</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Аудио, тексты и оценки не покидают ваш контур в базовой комплектации никогда. Три слоя хранения на стороне заказчика.</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">🛡 Форма Б: что уходит наружу</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Только обезличенные тексты. Вырезатель ПДн работает на вашей стороне до отправки. Режим аудита: видно, что именно ушло в конверте. Аудио не передаётся никогда.</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">⚙ Отключение подписки</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Продукт и все накопленные данные остаются у вас. Базовый уровень продолжает работать как ни в чём не бывало. Никакого vendor lock-in.</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">📋 Аудит и прозрачность</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Каждая оценка объяснима: по каждому баллу видно, из чего он сложился — с цитатой и таймкодом. Не магия, а проверяемые факты.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- СЛОИ ХРАНЕНИЯ -->
+<section class="section-blue">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-teal" style="margin-bottom:12px;">АРХИТЕКТУРА</span>
+      <h2>Три слоя хранения данных</h2>
+      <p style="max-width:720px;margin:12px auto 0;color:var(--text-muted);">Все данные аналитики живут у заказчика на уровне 1. Три слоя — и для каждого явно: что хранится, что рассчитывается, за счёт чего и когда обновляется.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr;gap:20px;">
+      <div class="card" style="text-align:left;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span class="badge badge-blue">СЛОЙ A</span>
+          <h4 style="margin:0;">Сырьё (неизменяемое)</h4>
+        </div>
+        <table class="spec-table">
+          <tr><th style="width:200px;">Что хранится</th><td>Аудиозаписи звонков (каналы оператор/клиент), сырые расшифровки, журналы диалогов бота</td></tr>
+          <tr><th>Обновление</th><td>В момент завершения каждого звонка (append-only, записи не правятся никогда)</td></tr>
+          <tr><th>Retention</th><td>По политике ПДн заказчика (настраиваемые сроки)</td></tr>
+        </table>
+      </div>
+      <div class="card" style="text-align:left;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span class="badge badge-blue">СЛОЙ B</span>
+          <h4 style="margin:0;">Обогащение (по каждому звонку)</h4>
+        </div>
+        <table class="spec-table">
+          <tr><th style="width:200px;">Что хранится</th><td>Канонизированный текст, тема, эмоции по репликам, метрики, отметки скрипта, простые проверки и резюме (от малой модели), векторные представления, вердикты уровня 2</td></tr>
+          <tr><th>Обновление</th><td>Инкрементально: каждый звонок проходит конвейер один раз сразу после завершения</td></tr>
+          <tr><th>Хранение</th><td>Postgres + pgvector (векторное расширение)</td></tr>
+        </table>
+      </div>
+      <div class="card" style="text-align:left;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <span class="badge badge-blue">СЛОЙ C</span>
+          <h4 style="margin:0;">Витрины (агрегаты)</h4>
+        </div>
+        <table class="spec-table">
+          <tr><th style="width:200px;">Что хранится</th><td>Агрегаты по оператору / команде / теме / периоду: баллы, динамика, тренды, рейтинги</td></tr>
+          <tr><th>Обновление</th><td>Инкремент в момент записи звонка + фоновые пересчёты при смене правил</td></tr>
+          <tr><th>Хранение</th><td>Postgres (старт) → ClickHouse (большие объёмы; переезжает только этот слой)</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px;background:#FEF3C7;border-color:#FCD34D; text-align:left;">
+      <p style="font-size:14px;color:#92400E;"><strong>Принципиально:</strong> аудио не уезжает никогда; ПДн вырезаются до отправки; всё возвращённое оседает в слоях заказчика — накопленный интеллект остаётся у клиента, даже если подписка закончится.</p>
+    </div>
+  </div>
+</section>
+
+<!-- СЕРТИФИКАТЫ -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">СООТВЕТСТВИЕ</span>
+      <h2>Сертификаты и статусы</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+          <h4 style="margin:0;">152-ФЗ</h4>
+          <span class="cert-status pending">шаблон</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Персональные данные обрабатываются в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p>
+        <div class="legal-box" style="margin-top:16px;">
+          <div class="row"><span class="label">Политика ПД</span><a href="privacy.html" style="color:var(--blue-700);text-decoration:none;">Шаблон политики →</a></div>
+          <div class="row"><span class="label">Уведомление РКН</span><span class="value">уточняется</span></div>
+          <div class="row"><span class="label">Локализация на территории РФ</span><span style="color:#059669;font-weight:600;">✓ да</span></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+          <h4 style="margin:0;">Реестр отечественного ПО</h4>
+          <span class="cert-status pending">заявка подана</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Статус в реестре Минцифры РФ. Подходит для госсектора и закупок по 44-ФЗ / 223-ФЗ.</p>
+        <div class="legal-box" style="margin-top:16px;">
+          <div class="row"><span class="label">Номер заявки</span><span class="value">уточняется</span></div>
+          <div class="row"><span class="label">Класс ПО</span><span class="value">прикладное, ИИ-аналитика</span></div>
+          <div class="row"><span class="label">Правообладатель</span><span class="value">РФ</span></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px;">
+          <h4 style="margin:0;">ФСТЭК</h4>
+          <span class="cert-status planned">планируется</span>
+        </div>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Сертификация по требованиям ФСТЭК для работы с защищаемой информацией.</p>
+        <div class="legal-box" style="margin-top:16px;">
+          <div class="row"><span class="label">Класс защищённости</span><span class="value">уточняется</span></div>
+          <div class="row"><span class="label">Статус</span><span class="value">в плане сертификации</span></div>
+          <div class="row"><span class="label">Применимо для</span><span class="value">банки, госсектор, медицина</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px;background:#F1F5F9;border-style:dashed;border-color:#CBD5E1; text-align:left;">
+      <p style="font-size:14px;color:#475569;"><strong>⚠ Статусы сертификатов уточняются.</strong> Актуальная информация предоставляется по запросу при подписании NDA. Для закупочных комитетов — отдельный пакет документов с актуальными статусами.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ЧЕСТНЫЕ ОГОВОРКИ -->
+<section class="section-blue">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">ЧЕСТНО</span>
+      <h2>Что мы не обещаем</h2>
+    </div>
+    <div class="features-grid">
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">⚠ Realtime-подсказки — только форма А</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Подсказки оператору в реальном времени требуют модель рядом. Продаём честно: realtime — только со своим GPU-сервером (форма А).</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">⚠ Форма Б требует доверия</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Вырезатель ПДн должен быть безупречен и проверяем. У клиента есть режим аудита: видно, что именно ушло в каждом конверте.</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">⚠ Качество подтверждается пилотом</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Совпадение автоматической оценки с оценками ваших супервизоров должно быть ≥85–90%. До достижения порога продаём измеримость, а не магию.</p>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:12px;">⚠ Серверная линейка GPU по умолчанию</h4>
+        <p style="font-size:14px;color:var(--text-muted);">Для продакшн-развёртываний рекомендуем NVIDIA L40S / A30 или отечественные ускорители. RTX 4090 — только для пилотов и малых инсталляций по осознанному решению.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container" style="text-align:center;">
+    <h2 style="margin-bottom:16px;">Нужен пакет документов для ИБ?</h2>
+    <p style="max-width:640px;margin:0 auto 24px;color:var(--text-muted);">Подготовим полный комплект для вашей службы информационной безопасности: архитектура, сертификаты, политика обработки ПД, схема потоков данных.</p>
+    <a href="contact.html" class="btn btn-primary">Запросить пакет для ИБ</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top-grid">
+      
+      <!-- Колонка 1: Контакты -->
+      <div class="footer-info-block">
+        <h4>ПРЯМАЯ СВЯЗЬ</h4>
+        <div class="contact-item">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+      </div>
+      
+      <!-- Колонка 2: Платформы -->
+      <div class="footer-info-block">
+        <h4>ПЛАТФОРМЫ</h4>
+        <a href="index.html">Речевая аналитика</a>
+        <a href="platforms/auto-order.html">Умный автозаказ</a>
+        <a href="architecture.html">Архитектура</a>
+        <a href="platforms/auto-order.html">Оборудование</a>
+      </div>
+
+      <!-- Колонка 3: Компания -->
+      <div class="footer-info-block">
+        <h4>КОМПАНИЯ</h4>
+        <a href="cases.html">Отрасли</a>
+        <a href="security.html">Безопасность</a>
+      </div>
+
+      <!-- Колонка 4: Документы -->
+      <div class="footer-info-block">
+        <h4>ДОКУМЕНТЫ</h4>
+        <a href="privacy.html">Политика ПД</a>
+        <a href="privacy.html">Пользовательское соглашение</a>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span>© 2026 Sitel</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Mobile menu
+function closeMobile() { 
+  document.getElementById('mobile-menu').classList.remove('open'); 
+}
+
+// Dropdown
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  if (!dropdown) return;
+  dropdown.classList.toggle('open');
+}
+
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.dropdown.open').forEach(d => {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || this.getAttribute('onclick')) return;
+    const target = document.querySelector(href);
+    if (target) { 
+      e.preventDefault(); 
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); 
+      closeMobile(); 
+    }
+  });
+});
+</script>
+</body>
+</html>

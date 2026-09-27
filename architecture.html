@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Архитектура и оборудование — Sitel</title>
+  <meta name="description" content="Двухуровневая архитектура речевой аналитики. Три контура развёртывания, требования к оборудованию, GPU-серверы.">
+  
+  <meta property="og:title" content="Архитектура и оборудование — Sitel">
+  <meta property="og:description" content="Три контура развёртывания, серверные GPU, расчёт TCO, таблица карточки звонка до и после.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/og-preview.png">
+  <meta property="og:url" content="/architecture.html">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231D4ED8'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='58' font-family='Georgia' font-weight='900'>S</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">S</div>
+      <span class="logo-text">Sitel</span>
+    </a>
+    
+    <nav class="nav-links">
+      <div class="dropdown" id="products-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
+        <div class="dropdown-menu">
+          <a href="index.html">Речевая аналитика</a>
+          <a href="platforms/auto-order.html">Умный автозаказ</a>
+          <a href="platforms/docs.html">Документооборот</a>
+        </div>
+      </div>
+      <a href="cases.html">Отрасли</a>
+      <a href="security.html">Безопасность</a>
+      <a href="architecture.html" style="color:var(--blue-700);font-weight:600;">Архитектура</a>
+    </nav>
+    
+    <div class="header-actions">
+      <a href="downloads/sitel-presentation.pdf" download class="btn btn-outline btn-sm">PDF</a>
+      <a href="contact.html" class="btn btn-primary btn-sm">Запросить демо</a>
+    </div>
+    
+    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="Меню">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  
+  <div class="mobile-menu" id="mobile-menu">
+    <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
+    <div class="mobile-submenu">
+      <a href="index.html" onclick="closeMobile()">Речевая аналитика</a>
+      <a href="platforms/auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
+      <a href="platforms/docs.html" onclick="closeMobile()">Документооборот</a>
+    </div>
+    <a href="cases.html" onclick="closeMobile()">Отрасли</a>
+    <a href="security.html" onclick="closeMobile()">Безопасность</a>
+    <a href="architecture.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Архитектура</a>
+    <a href="contact.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Запросить демо →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="badge badge-blue" style="margin-bottom:12px;">АРХИТЕКТУРА</span>
+    <h1>Базовый продукт — у вас навсегда. Расширенная аналитика — по подписке</h1>
+    <p>Граница проходит по техническому шву: распознавание речи работает на обычном процессоре, серьёзная GPU-инфраструктура нужна только большой языковой модели. Три контура развёртывания — вы выбираете, где проходит граница.</p>
+  </div>
+</section>
+
+<!-- ДВА УРОВНЯ -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">МОДЕЛЬ ПРОДУКТА</span>
+      <h2>За независимость платят один раз. За глубину — пока она нужна</h2>
+    </div>
+    <div class="features-grid">
+      <div class="card" style="border-left:4px solid var(--blue-700);">
+        <span class="badge badge-blue" style="margin-bottom:12px;">БАЗОВЫЙ ПРОДУКТ</span>
+        <h4 style="margin-bottom:12px;">Уровень 1 — у вас навсегда</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Даже если завтра отключат интернет, а послезавтра закончится подписка — вот что продолжит работать у вас как ни в чём не бывало:</p>
+        <ul style="list-style:none;font-size:14px;color:var(--text-secondary);">
+          <li style="padding:4px 0;">→ Расшифровка 100% звонков на CPU</li>
+          <li style="padding:4px 0;">→ Контроль скриптов и комплаенса</li>
+          <li style="padding:4px 0;">→ Эмоции, метрики, темы обращений</li>
+          <li style="padding:4px 0;">→ Базовый скоринг операторов</li>
+          <li style="padding:4px 0;">→ ИИ-голосовой помощник</li>
+          <li style="padding:4px 0;">→ Дашборды и отчёты в реальном времени</li>
+          <li style="padding:4px 0;">→ Малая языковая модель для резюме</li>
+        </ul>
+        <div style="margin-top:20px;padding:12px;background:#EFF6FF;border-radius:8px;font-size:13px;">
+          <strong>Железо:</strong> обычный сервер, без дорогостоящих GPU для основной нагрузки. Одна видеокарта 24 ГБ для малой модели.
+        </div>
+      </div>
+      <div class="card" style="border-left:4px solid var(--teal-600);">
+        <span class="badge badge-teal" style="margin-bottom:12px;">РАСШИРЕННАЯ АНАЛИТИКА</span>
+        <h4 style="margin-bottom:12px;">Уровень 2 — по подключению</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Большая языковая модель (32+ млрд параметров) подключается как услуга к уже накопленным данным. Объясняет причины, даёт рекомендации, прогнозирует поведение.</p>
+        <ul style="list-style:none;font-size:14px;color:var(--text-secondary);">
+          <li style="padding:4px 0;">→ Смысловой чек-лист с цитатами-обоснованиями</li>
+          <li style="padding:4px 0;">→ Диагностика причин ошибок</li>
+          <li style="padding:4px 0;">→ Рекомендации коучу с таймкодами</li>
+          <li style="padding:4px 0;">→ Еженедельные дайджесты для руководства</li>
+          <li style="padding:4px 0;">→ Прогноз оттока клиентов</li>
+          <li style="padding:4px 0;">→ Самообучение бота из лучших ответов</li>
+          <li style="padding:4px 0;">→ «Плейбук лучших операторов»</li>
+        </ul>
+        <div style="margin-top:20px;padding:12px;background:#F0FDFA;border-radius:8px;font-size:13px;">
+          <strong>Принципиально:</strong> отключение подписки не приводит к потере данных. Очередь вместо потери.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ТАБЛИЦА: КАРТОЧКА ЗВОНКА -->
+<section class="section-blue">
+  <div class="container">
+    <div style="margin-bottom:32px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">РАЗНИЦА</span>
+      <h2>Карточка звонка: до и после подключения</h2>
+    </div>
+    <div class="card-flat" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Поле карточки</th><th>База (всегда)</th><th>+ Расширенная</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Текст разговора</td><td class="check">✓ полный</td><td class="check">✓ полный</td></tr>
+          <tr><td>Скрипт соблюдён (по пунктам)</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Перебивания, паузы, доля речи</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Эмоции: пришёл / ушёл, точка эскалации</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Простые смысловые проверки (да/нет)</td><td class="check">✓ малая модель</td><td class="check">✓</td></tr>
+          <tr><td>Краткое резюме звонка</td><td class="check">✓ малая модель</td><td class="check">✓</td></tr>
+          <tr><td>Тема звонка</td><td class="check">✓</td><td class="check">✓ + связи с новыми темами</td></tr>
+          <tr><td>Полный смысловой чек-лист с цитатами</td><td class="pending">⏳ дозаполнится</td><td class="check">✓</td></tr>
+          <tr><td>Развёрнутое резюме сложного звонка</td><td class="pending">⏳</td><td class="check">✓</td></tr>
+          <tr><td>Рекомендация коучу</td><td class="dash">—</td><td class="check">✓</td></tr>
+          <tr><td>Дайджест для руководства</td><td class="dash">—</td><td class="check">✓</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">⏳ Поля «дозаполнится» заполняются задним числом по всей накопленной истории при подключении. Клиент ничего не теряет, откладывая подключение.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ТРИ КОНТУРА -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-teal" style="margin-bottom:12px;">КОНТУРЫ РАЗВЁРТЫВАНИЯ</span>
+      <h2>Три формы подключения — под ваш бюджет и требования ИБ</h2>
+      <p style="max-width:720px;margin:12px auto 0;color:var(--text-muted);">Формы совместимы и переключаемы: начать с подписки (быстрый старт), вырасти до своего сервера. Контракт между уровнями один и тот же, миграция — переключение адреса.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="card">
+        <span class="badge badge-blue" style="margin-bottom:12px;">ФОРМА А</span>
+        <h4 style="margin-bottom:12px;">Общий сервер внутри компании</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Для крупных: телеком, банк, госсектор. Каждый филиал держит дешёвый узел уровня 1; один GPU-сервер уровня 2 обслуживает всех.</p>
+        <div class="legal-box">
+          <div class="row"><span class="label">Данные</span><span style="color:#059669;font-weight:600;">не покидают периметр</span></div>
+          <div class="row"><span class="label">Для кого</span><span class="value">банки, телеком, гос</span></div>
+          <div class="row"><span class="label">Оплата</span><span class="value">лицензия + годовая поддержка</span></div>
+          <div class="row"><span class="label">Обновления моделей</span><span class="value">каждые 2–3 месяца</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="badge badge-teal" style="margin-bottom:12px;">ФОРМА Б</span>
+        <h4 style="margin-bottom:12px;">Наш сервис по подписке</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Для среднего бизнеса: медцентры, ритейл, сервисные сети. Узел уровня 1 отправляет обезличенные тексты, получает обратно оценки и выводы.</p>
+        <div class="legal-box">
+          <div class="row"><span class="label">Что уходит</span><span style="color:#059669;font-weight:600;">только обезличенные тексты</span></div>
+          <div class="row"><span class="label">Аудио</span><span style="color:#059669;font-weight:600;">не передаётся никогда</span></div>
+          <div class="row"><span class="label">Для кого</span><span class="value">SMB, средний бизнес</span></div>
+          <div class="row"><span class="label">Оплата</span><span class="value">помесячная подписка</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <span class="badge badge-amber" style="margin-bottom:12px;">ФОРМА В</span>
+        <h4 style="margin-bottom:12px;">Арендованная машина на ночь</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Для тех, кто не хочет ни серьёзного своего GPU, ни чужого сервиса. Ночью в облаке поднимается машина на 1–2 часа, обрабатывает очередь и гасится.</p>
+        <div class="legal-box">
+          <div class="row"><span class="label">Обработка</span><span style="color:#059669;font-weight:600;">1–2 часа ночью</span></div>
+          <div class="row"><span class="label">Объём</span><span class="value">10 000 звонков / ночь</span></div>
+          <div class="row"><span class="label">Для кого</span><span class="value">пики без постоянного GPU</span></div>
+          <div class="row"><span class="label">Оплата</span><span class="value">за часы обработки</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GPU / ОБОРУДОВАНИЕ -->
+<section class="section-blue">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">ОБОРУДОВАНИЕ</span>
+      <h2>Требования к железу и GPU</h2>
+      <p style="max-width:720px;margin:12px auto 0;color:var(--text-muted);">Основной функционал работает без дорогостоящих GPU. Оптимизированные модели не требуют колоссальных вычислительных ресурсов.</p>
+    </div>
+
+    <!-- Вопрос эксперта: STT на CPU, зачем GPU? -->
+    <div class="card" style="background:#EFF6FF;border-color:#DBEAFE;margin-bottom:24px; text-align:left;">
+      <p style="font-size:14px;color:#0F172A;font-weight:600;margin-bottom:12px;">«Если STT работает на CPU, а большая модель опциональна — зачем в базовой поставке видеокарта?»</p>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Видеокарта в базовой поставке нужна не для распознавания речи (оно действительно работает на CPU), а для <strong style="color:#0F172A;">малой языковой модели</strong>, которая входит в базовый уровень: краткое резюме каждого звонка, автоматические названия новых тем, простые смысловые проверки для базового скоринга. Она работает полностью у вас, без внешних подключений.</p>
+      <p style="font-size:14px;color:var(--text-muted);">Если эти функции не нужны — конфигурация упрощается до сервера без GPU. Расчёт предоставляется при запросе демо.</p>
+    </div>
+
+    <!-- GPU: серверная линейка -->
+    <div class="card" style="background:#FEF3C7;border-color:#FCD34D;margin-bottom:32px; text-align:left;">
+      <h4 style="margin-bottom:12px;">⚠ Серверная линейка GPU для продакшена</h4>
+      <p style="font-size:14px;color:#92400E;margin-bottom:12px;"><strong>RTX 4090 — потребительская карта.</strong> Лицензионное соглашение NVIDIA не предполагает её использование в дата-центре. Для банков, госсектора и медицины служба ИБ и закупки упрутся в это сразу.</p>
+      <p style="font-size:14px;color:#92400E;"><strong style="color:#0F172A;">По умолчанию для продакшн-развёртывания мы предлагаем серверную линейку</strong> (NVIDIA L40S / A30 или эквивалент) либо отечественные ускорители. Розничная карта 24 ГБ допустима как осознанное решение для пилотов и малых инсталляций — мы показываем расчёт TCO «розничная карта сейчас vs серверная сразу». Выбор фиксируется в спецификации до подписания контракта.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:16px;">Базовый уровень (Уровень 1)</h4>
+        <table class="spec-table">
+          <tr><th>Объём</th><th>Железо</th></tr>
+          <tr><td>100 звонков/сутки</td><td>Любой современный сервер, GPU не требуется</td></tr>
+          <tr><td>1 000 звонков/сутки</td><td>Сервер + 1× GPU 24 ГБ (малая модель)</td></tr>
+          <tr><td>10 000 звонков/сутки</td><td>Узел уровня 1 + выделенный GPU-сервер (форма А)</td></tr>
+          <tr><th>STT</th><td>CPU (видеокарта свободна)</td></tr>
+          <tr><th>Малая модель</th><td>Розничная GPU 24 ГБ</td></tr>
+          <tr><th>Интернет</th><td>Не обязателен</td></tr>
+        </table>
+      </div>
+      <div class="card" style="text-align:left;">
+        <h4 style="margin-bottom:16px;">Расширенная аналитика (Уровень 2)</h4>
+        <table class="spec-table">
+          <tr><th>Рекомендуется</th><td>NVIDIA L40S / A30 или отечественные ускорители</td></tr>
+          <tr><th>Примечание</th><td>RTX 4090 — только для пилотов по осознанному решению</td></tr>
+          <tr><th>TCO</th><td>Расчёт предоставляется при запросе демо</td></tr>
+          <tr><th>Модель</th><td>32+ млрд параметров</td></tr>
+          <tr><th>Обновления</th><td>Каждые 2–3 месяца (рынок LLM меняется быстро)</td></tr>
+          <tr><th>Формы развёртывания</th><td>А: свой сервер, Б: наш сервис, В: ночная аренда</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ОЦЕНКА ОПЕРАТОРОВ -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">СКОРИНГ</span>
+      <h2>Оценка операторов: детектор и диагност</h2>
+      <p style="max-width:720px;margin:12px auto 0;color:var(--text-muted);">Базовый скоринг — детектор (находит проблему и показывает где). Расширенный — диагност (объясняет почему и назначает лечение). Детектор у клиента навсегда; диагност — по подключению.</p>
+    </div>
+
+    <div class="card" style="overflow-x:auto;margin-bottom:24px; text-align:left;">
+      <table class="spec-table">
+        <thead>
+          <tr><th>Вопрос руководителя КЦ</th><th>Базовый уровень отвечает</th><th>Расширенный отвечает</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>У кого из операторов проблемы?</td>
+            <td class="check">✓ «Мария: балл 62/100, худший в команде; с прошлого вторника рост эскалаций ×2»</td>
+            <td class="check">✓ то же + приоритизация по влиянию на выручку</td>
+          </tr>
+          <tr>
+            <td>Где именно проблемы?</td>
+            <td class="check">✓ «нарушения скрипта в 8% звонков; перебивает выше нормы; 12% звонков — клиент ушёл злее»</td>
+            <td class="check">✓ то же</td>
+          </tr>
+          <tr>
+            <td>Почему?</td>
+            <td class="dash">— (видно ЧТО, не видно ПОЧЕМУ)</td>
+            <td class="check">✓ «в возражениях о цене не выявляет потребность и сразу уступает; цитаты из 14 звонков»</td>
+          </tr>
+          <tr>
+            <td>Что делать?</td>
+            <td class="dash">—</td>
+            <td class="check">✓ «рекомендация: тренинг работы с возражением; вот 5 эталонных звонков коллег»</td>
+          </tr>
+          <tr>
+            <td>Оценка честная и проверяемая?</td>
+            <td class="check">✓ правила и метрики — объяснимы на 100%</td>
+            <td class="check">✓ каждый вывод — с цитатой; калибровка с супервизорами</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-blue">
+  <div class="container" style="text-align:center;">
+    <h2 style="margin-bottom:16px;">Готовы обсудить архитектуру под вашу инфраструктуру?</h2>
+    <p style="max-width:640px;margin:0 auto 24px;color:var(--text-muted);">Технический эксперт подготовит спецификацию с учётом ваших требований ИБ, существующего железа и объёмов. Расчёт TCO для формы А — в комплекте.</p>
+    <a href="contact.html" class="btn btn-primary">Запросить расчёт архитектуры</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top-grid">
+      
+      <!-- Колонка 1: Контакты -->
+      <div class="footer-info-block">
+        <h4>ПРЯМАЯ СВЯЗЬ</h4>
+        <div class="contact-item">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+      </div>
+      
+      <!-- Колонка 2: Платформы -->
+      <div class="footer-info-block">
+        <h4>ПЛАТФОРМЫ</h4>
+        <a href="index.html">Речевая аналитика</a>
+        <a href="platforms/auto-order.html">Умный автозаказ</a>
+        <a href="architecture.html">Архитектура</a>
+        <a href="platforms/auto-order.html">Оборудование</a>
+      </div>
+
+      <!-- Колонка 3: Компания -->
+      <div class="footer-info-block">
+        <h4>КОМПАНИЯ</h4>
+        <a href="cases.html">Отрасли</a>
+        <a href="security.html">Безопасность</a>
+      </div>
+
+      <!-- Колонка 4: Документы -->
+      <div class="footer-info-block">
+        <h4>ДОКУМЕНТЫ</h4>
+        <a href="privacy.html">Политика ПД</a>
+        <a href="privacy.html">Пользовательское соглашение</a>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span>© 2026 Sitel</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Mobile menu
+function closeMobile() { 
+  document.getElementById('mobile-menu').classList.remove('open'); 
+}
+
+// Dropdown
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  if (!dropdown) return;
+  dropdown.classList.toggle('open');
+}
+
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.dropdown.open').forEach(d => {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || this.getAttribute('onclick')) return;
+    const target = document.querySelector(href);
+    if (target) { 
+      e.preventDefault(); 
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); 
+      closeMobile(); 
+    }
+  });
+});
+</script>
+</body>
+</html>
