@@ -171,6 +171,7 @@ section + section { border-top: 1px solid var(--border); }
 .dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown-menu a { display: block; padding: 10px 16px; color: var(--text-secondary); text-decoration: none; font-size: 14px; }
 .dropdown-menu a:hover { background: var(--bg); color: var(--blue-700); }
+.dropdown-menu a.active { background: var(--blue-50); color: var(--blue-700); }
 
 .header-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
