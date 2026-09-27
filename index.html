@@ -34,7 +34,7 @@
       <div class="dropdown" id="products-dropdown">
         <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
         <div class="dropdown-menu">
-          <a href="index.html" class="active">Речевая аналитика</a>
+          <a href="platforms/speech.html">Речевая аналитика</a>
           <a href="platforms/auto-order.html">Умный автозаказ</a>
           <a href="platforms/docs.html">Документооборот</a>
         </div>
@@ -57,7 +57,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
     <div class="mobile-submenu">
-      <a href="index.html" onclick="closeMobile()">Речевая аналитика</a>
+      <a href="platforms/speech.html" onclick="closeMobile()">Речевая аналитика</a>
       <a href="platforms/auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
       <a href="platforms/docs.html" onclick="closeMobile()">Документооборот</a>
     </div>
@@ -111,291 +111,31 @@
   </div>
 </section>
 
-<!-- HYBRID ARCHITECTURE VS PURE LLM (Слайды 2, 3, 4, 5) -->
+
+<!-- PLATFORMS -->
 <section style="background:#FFFFFF;padding:56px 0;border-bottom:1px solid var(--border);">
   <div class="container">
     <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
-      <span class="badge badge-teal" style="margin-bottom:12px;">ГИБРИДНЫЙ ПОДХОД</span>
-      <h2>Почему чистые LLM не решают задачи среднего и крупного бизнеса</h2>
-      <p style="color:var(--text-muted);font-size:15px;line-height:1.6;">Облачные LLM несут риски утечки ПДн, галлюцинируют и требуют колоссальных вычислительных мощностей. Наша платформа объединяет <strong>векторную базу данных</strong>, классический ML/NLU стек и Python-скрипты в закрытом контуре заказчика.</p>
+      <span class="badge badge-teal" style="margin-bottom:12px;">ПЛАТФОРМЫ</span>
+      <h2>Три готовых решения на одном ядре</h2>
+      <p style="color:var(--text-muted);font-size:15px;line-height:1.6;">Каждая платформа разворачивается в вашем контуре и работает на общей векторной базе данных со стеком ИИ технологий.</p>
     </div>
-
-    <div class="compare-table-wrapper" style="overflow-x:auto;margin-bottom:36px;">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th style="width:30%;">Критерий / Задача</th>
-            <th style="width:35%;background:#FEF2F2;color:#991B1B;">Чистые LLM (Claude, ChatGPT, Qwen)</th>
-            <th style="width:35%;background:#EFF6FF;color:#1D4ED8;">Гибридная платформа Sitel</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Безопасность и регуляторы</strong></td>
-            <td>Передача данных в облако, риски 152-ФЗ</td>
-            <td style="background:#F0FDF4;font-weight:600;color:#166534;">100% в закрытом периметре (152-ФЗ, тайна)</td>
-          </tr>
-          <tr>
-            <td><strong>Требования к серверам</strong></td>
-            <td>Дорогие GPU-кластеры с сотнями ГБ VRAM</td>
-            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Базовые сервисы работают на обычных CPU без GPU</td>
-          </tr>
-          <tr>
-            <td><strong>Точность и галлюцинации</strong></td>
-            <td>Выдуманные факты, непредсказуемый результат</td>
-            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Детерминированное NLU, 95% точность ASR</td>
-          </tr>
-          <tr>
-            <td><strong>Скорость отклика</strong></td>
-            <td>Задержка 2–5 сек (непригодно для звонков)</td>
-            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Отклик &lt; 1 сек, мгновенная реакция на перебивания</td>
-          </tr>
-          <tr>
-            <td><strong>Работа с корпоративными БД</strong></td>
-            <td>Ограниченный контекст, сложность интеграции</td>
-            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Векторная БД: нативный RAG по 1C, CRM, ERP, биллингу</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- 6 блоков архитектуры платформы речевого интеллекта (Слайд 5) -->
-    <div style="margin-top:20px;">
-      <h3 style="text-align:center;font-size:1.4rem;margin-bottom:24px;">Ядро платформы речевого интеллекта</h3>
-      <div class="features-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
-        <div class="card" style="border-top:4px solid var(--blue-600);">
-          <h4 style="margin-bottom:8px;">1. Векторная БД и Стек ИИ</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Ядро платформы. Объединяет базу знаний, даталейк, 1С, CRM и биллинг. Обеспечивает мгновенный семантический поиск без внешних обращений.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--blue-600);">
-          <h4 style="margin-bottom:8px;">2. Транскрибация речи (ASR)</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">95% точность распознавания речи. Локальная работа на CPU. Автоматическая нормализация показаний счетчиков, сумм, номеров счетов и дат.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--blue-600);">
-          <h4 style="margin-bottom:8px;">3. Определение интентов (NLU)</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Определение намерений ≥90%. Классификация тем, извлечение сущностей, самостоятельное подключение отраслевых словарей заказчика.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--teal-600);">
-          <h4 style="margin-bottom:8px;">4. Биометрия по голосу</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Идентификация участников разговора по акустическим слепкам. Автоматическое протоколирование совещаний и разделение каналов оператор/клиент.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--teal-600);">
-          <h4 style="margin-bottom:8px;">5. No-Code обучение бота</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Конструктор скриптов без программирования, валидация тупиков и связей, симуляция разговора голосом и текстом без телефонной линии.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--teal-600);">
-          <h4 style="margin-bottom:8px;">6. Расширенная Аналитика v2.0</h4>
-          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Смысловой аудит с точными цитатами, еженедельные дайджесты для руководства и непрерывное самообучение бота на базе лучших ответов.</p>
-        </div>
+    <div class="features-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+      <div class="card" style="border-top:4px solid var(--blue-600);">
+        <h4 style="margin-bottom:8px;">Платформа речевого интеллекта</h4>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:14px;">100% звонков: транскрибация, контроль скриптов с цитатами, эмоции и намерения, биометрия голоса, скоринг операторов и голосовой ИИ-бот.</p>
+        <a href="platforms/speech.html" class="btn btn-outline btn-sm">Открыть платформу →</a>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- KEY FEATURES -->
-<section class="section-blue">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:48px;">
-      <span class="badge badge-blue" style="margin-bottom:12px;">ПЛЮШКИ ДЛЯ БИЗНЕСА</span>
-      <h2>Что получает бизнес от внедрения платформы</h2>
-      <p style="max-width:680px;margin:12px auto 0;color:var(--text-muted);">Быстрая окупаемость, снижение расходов на контакт-центр и рост автоматизации с каждого месяца работы.</p>
-    </div>
-    <div class="features-grid">
-      <div class="card">
-        <h4 style="margin-bottom:12px;">🎯 100% контроль коммуникаций</h4>
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Тотальный аудит диалогов вместо выборочной проверки 3–5%. Моментальное выявление точек конфликта и нарушений.</p>
-        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
-          <li>→ 95% точность распознавания речи на русском языке</li>
-          <li>→ Контроль скрипта: да/нет с точной цитатой и таймкодом</li>
-          <li>→ Объективные метрики: перебивания, темп речи, доля пауз</li>
-        </ul>
+      <div class="card" style="border-top:4px solid var(--teal-600);">
+        <h4 style="margin-bottom:8px;">Умный автозаказ</h4>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:14px;">Прогноз спроса до 200 факторов, A/B-тестирование стратегий и автоматическое формирование заказов поставщику.</p>
+        <a href="platforms/auto-order.html" class="btn btn-outline btn-sm">Открыть платформу →</a>
       </div>
-      <div class="card">
-        <h4 style="margin-bottom:12px;">🤖 Умный голосовой бот</h4>
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Автоматизация до 60–80% рутинных вызовов без найма линейных операторов.</p>
-        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
-          <li>→ Мгновенная реакция на перебивание: бот замолкает и слушает клиента</li>
-          <li>→ Парсинг расписаний, начислений, балансов из 1С/CRM без задержек</li>
-          <li>→ Настройка сценариев без программирования (No-Code конструктор)</li>
-        </ul>
+      <div class="card" style="border-top:4px solid var(--blue-900);">
+        <h4 style="margin-bottom:8px;">Интеллектуальный документооборот</h4>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:14px;">Единое хранилище документов, семантический поиск по смыслу, сравнение договоров и обработка входящей почты.</p>
+        <a href="platforms/docs.html" class="btn btn-outline btn-sm">Открыть платформу →</a>
       </div>
-      <div class="card">
-        <h4 style="margin-bottom:12px;">⚡ 0 рублей затрат на GPU</h4>
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Базовые сервисы работают на обычных серверных процессорах CPU без покупки дорогостоящих видеокарт.</p>
-        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
-          <li>→ Быстрый старт на существующей инфраструктуре компании</li>
-          <li>→ Полная автономность без зависимости от зарубежных облаков</li>
-          <li>→ Для расширенной аналитики достаточно одной розничной RTX 4090</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h4 style="margin-bottom:12px;">📈 Самообучение и рост конверсии</h4>
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Флагманская аналитика находит лучшие приемы топ-операторов и конвертирует их в новые навыки бота.</p>
-        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
-          <li>→ Уровень автоматизации КЦ растет с каждым месяцем эксплуатации</li>
-          <li>→ Адресные рекомендации супервизорам для обучения сотрудников</li>
-          <li>→ Предиктивный прогноз оттока клиентов по тональности звонков</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT PROTOTYPES -->
-<section>
-  <div class="container">
-    <div style="margin-bottom:48px;">
-      <span class="badge badge-dark" style="margin-bottom:12px;">ИНТЕРФЕЙС</span>
-      <h2 style="margin-bottom:12px;">Что видит руководитель и супервайзер</h2>
-      <p style="max-width:720px;color:var(--text-muted);">Прототипы ключевых экранов. Финальные скриншоты появятся после утверждения дизайна.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
-      <div class="proto-dashboard">
-        <div class="proto-tag"><span class="badge badge-amber">ПРОТОТИП</span></div>
-        <div class="proto-header">
-          <div class="proto-dot" style="background:#EF4444;"></div>
-          <div class="proto-dot" style="background:#F59E0B;"></div>
-          <div class="proto-dot" style="background:#22C55E;"></div>
-          <span style="color:#64748B;font-size:12px;margin-left:8px;">Карточка звонка</span>
-        </div>
-        <div class="proto-body" style="font-size:13px;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
-            <span style="font-weight:600;color:var(--text-primary);">Оператор: Мария К.</span>
-            <span class="badge badge-amber">62/100</span>
-          </div>
-          <div style="background:white;padding:10px;border-radius:6px;border:1px solid var(--border);margin-bottom:8px;">
-            <div style="color:var(--green-500);font-size:11px;font-weight:600;">✓ Приветствие</div>
-            <div style="color:var(--green-500);font-size:11px;font-weight:600;">✓ Представление</div>
-            <div style="color:var(--red-500);font-size:11px;font-weight:600;">✗ Условия акции (пропуск)</div>
-            <div style="color:var(--red-500);font-size:11px;font-weight:600;">✗ Работа с возражением</div>
-          </div>
-          <div style="font-size:11px;color:var(--text-muted);">Эмоции: клиент пришёл нейтрально → ушёл раздражён</div>
-        </div>
-      </div>
-      <div class="proto-dashboard">
-        <div class="proto-tag"><span class="badge badge-amber">ПРОТОТИП</span></div>
-        <div class="proto-header">
-          <div class="proto-dot" style="background:#EF4444;"></div>
-          <div class="proto-dot" style="background:#F59E0B;"></div>
-          <div class="proto-dot" style="background:#22C55E;"></div>
-          <span style="color:#64748B;font-size:12px;margin-left:8px;">Рейтинг операторов</span>
-        </div>
-        <div class="proto-body" style="font-size:13px;">
-          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
-            <span>Алексей Д.</span><span style="color:var(--green-500);font-weight:700;">94/100</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
-            <span>Ольга С.</span><span style="color:var(--green-500);font-weight:700;">88/100</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
-            <span>Иван Р.</span><span style="color:var(--amber-500);font-weight:700;">75/100</span>
-          </div>
-          <div style="display:flex;justify-content:space-between;padding:8px 0;background:#FEF2F2;margin:0 -20px;padding:8px 20px;border-radius:4px;">
-            <span>Мария К.</span><span style="color:var(--red-500);font-weight:700;">62/100 ⚠</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-</section>
-
-<!-- MODULES ACCORDION -->
-<section class="section-blue">
-  <div class="container">
-    <div style="margin-bottom:48px;">
-      <span class="badge badge-blue" style="margin-bottom:12px;">МОДУЛИ ПЛАТФОРМЫ</span>
-      <h2>Полный функционал</h2>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
-        <span class="title">Речевая аналитика 100% звонков</span>
-        <span class="badge badge-blue">БАЗОВЫЙ</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="accordion-content"><div class="accordion-body"><ul>
-        <li>Транскрибация 100% разговоров на CPU</li>
-        <li>Контроль скриптов: каждое правило — да/нет с цитатой и таймкодом</li>
-        <li>Эмоции: агрессия, удовлетворённость — у клиента и оператора</li>
-        <li>Перебивания, паузы, темп, доля речи оператора</li>
-        <li>Флаги комплаенса: запрещённые фразы, дисклеймеры</li>
-        <li>Темы обращений: что растёт, что появилось впервые</li>
-      </ul></div></div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
-        <span class="title">ИИ-голосовой помощник</span>
-        <span class="badge badge-blue">БАЗОВЫЙ</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="accordion-content"><div class="accordion-body"><ul>
-        <li>Входящие и исходящие звонки</li>
-        <li>Создание скриптов без программирования</li>
-        <li>Лёгкая интеграция с существующими базами данных</li>
-        <li>Простое обучение отраслевой лексике</li>
-        <li>TTS с выбором голоса и интонационной адаптацией</li>
-        <li>Уступает слово при попытке прервать</li>
-      </ul></div></div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
-        <span class="title">Скоринг операторов</span>
-        <span class="badge badge-blue">БАЗОВЫЙ</span>
-        <span class="badge badge-teal">+ ИНТЕЛЛЕКТ</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="accordion-content"><div class="accordion-body">
-        <p style="font-size:14px;margin-bottom:12px;color:var(--text-secondary);">Базовый: <strong>«у кого и где»</strong>. Интеллект: <strong style="color:var(--teal-600);">«почему и что делать»</strong>.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
-          <div style="padding:12px;background:var(--bg);border-radius:8px;">
-            <div style="font-size:12px;font-weight:700;color:var(--blue-700);margin-bottom:8px;">БАЗОВЫЙ (ВСЕГДА)</div>
-            <div style="font-size:13px;">✓ Скрипт по каждому звонку<br>✓ Перебивания, паузы, доля речи<br>✓ Эмоциональная динамика<br>✓ Сводный балл, рейтинг<br>✓ Автовыявление аномалий</div>
-          </div>
-          <div style="padding:12px;background:var(--teal-100);border-radius:8px;">
-            <div style="font-size:12px;font-weight:700;color:var(--teal-600);margin-bottom:8px;">ИНТЕЛЛЕКТ (ПО ПОДПИСКЕ)</div>
-            <div style="font-size:13px;">✓ Чек-лист с цитатами<br>✓ Паттерны ошибок<br>✓ Рекомендации коучу<br>✓ Плейбук лучших<br>✓ Прогноз оттока</div>
-          </div>
-        </div>
-        <div style="padding:12px;background:var(--bg);border-radius:8px;font-size:13px;"><strong>Пример:</strong> «Мария: 62/100; в возражениях о цене не выявляет потребность — 14 из 17. Рекомендация: тренинг, 5 эталонных звонков приложены».</div>
-      </div></div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
-        <span class="title">Дашборды в реальном времени</span>
-        <span class="badge badge-blue">БАЗОВЫЙ</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="accordion-content"><div class="accordion-body"><ul>
-        <li>Инкрементально: каждый звонок сразу в аналитике</li>
-        <li>Тепловые карты тем, рейтинги, карта эскалаций</li>
-        <li>KPI-алерты с push-уведомлениями</li>
-        <li>Экспорт в PowerPoint/PDF по расписанию</li>
-      </ul></div></div>
-    </div>
-
-    <div class="accordion-item" style="border-color:var(--teal-500);">
-      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
-        <span class="title">Расширенная аналитика</span>
-        <span class="badge badge-teal">ИНТЕЛЛЕКТ</span>
-        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="accordion-content"><div class="accordion-body">
-        <p style="font-size:14px;margin-bottom:12px;">Большая языковая модель (32+ млрд параметров). Объясняет причины, даёт рекомендации, прогнозирует поведение клиентов.</p>
-        <ul>
-          <li>Полный чек-лист с цитатами-обоснованиями</li>
-          <li>Паттерны проблем по сотням звонков</li>
-          <li>Еженедельные дайджесты для руководства</li>
-          <li>Прогноз оттока клиентов</li>
-          <li><strong>Самообучение бота:</strong> лучшие ответы → навыки</li>
-        </ul>
-        <div style="margin-top:12px;padding:12px;background:var(--teal-100);border-radius:8px;font-size:13px;"><strong style="color:var(--teal-600);">Важно:</strong> отключение подписки не приводит к потере данных.</div>
-      </div></div>
     </div>
   </div>
 </section>
@@ -506,7 +246,7 @@
       <!-- Колонка 2: Платформы -->
       <div class="footer-info-block">
         <h4>ПЛАТФОРМЫ</h4>
-        <a href="index.html">Речевая аналитика</a>
+        <a href="platforms/speech.html">Речевая аналитика</a>
         <a href="platforms/auto-order.html">Умный автозаказ</a>
         <a href="architecture.html">Архитектура</a>
         <a href="platforms/auto-order.html">Оборудование</a>

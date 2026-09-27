@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Платформа речевого интеллекта — Sitel</title>
+  <meta name="description" content="100% звонков расшифрованы и проанализированы: скрипты с цитатами, эмоции, намерения, скоринг операторов и голосовой ИИ-бот в закрытом контуре.">
+  
+  <meta property="og:title" content="Платформа речевого интеллекта — Sitel">
+  <meta property="og:description" content="Речевая аналитика 100% звонков, биометрия голоса, интенты, смысловой аудит и голосовой ИИ-бот на векторной БД.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/images/og-preview.png">
+  <meta property="og:url" content="/platforms/speech.html">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231D4ED8'/><text x='50' y='68' text-anchor='middle' fill='white' font-size='58' font-family='Georgia' font-weight='900'>S</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">
+      <span class="logo-text"><img class="logo-text-icon" src="../logo/logo_sitel2.png" alt="Sitel" height="100"></span>
+    </a>
+    
+    <nav class="nav-links">
+      <div class="dropdown" id="products-dropdown">
+        <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
+        <div class="dropdown-menu">
+          <a href="speech.html" class="active">Речевая аналитика</a>
+          <a href="auto-order.html">Умный автозаказ</a>
+          <a href="docs.html">Документооборот</a>
+        </div>
+      </div>
+      <a href="../cases.html">Отрасли</a>
+      <a href="../security.html">Безопасность</a>
+      <a href="../architecture.html">Архитектура</a>
+    </nav>
+    
+    <div class="header-actions">
+      <a href="../downloads/sitel-presentation.pdf" download class="btn btn-outline btn-sm">PDF</a>
+      <a href="../contact.html" class="btn btn-primary btn-sm">Запросить демо</a>
+    </div>
+    
+    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-label="Меню">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  
+  <div class="mobile-menu" id="mobile-menu">
+    <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
+    <div class="mobile-submenu">
+      <a href="speech.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Речевая аналитика</a>
+      <a href="auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
+      <a href="docs.html" onclick="closeMobile()">Документооборот</a>
+    </div>
+    <a href="../cases.html" onclick="closeMobile()">Отрасли</a>
+    <a href="../security.html" onclick="closeMobile()">Безопасность</a>
+    <a href="../architecture.html" onclick="closeMobile()">Архитектура</a>
+    <a href="../contact.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Запросить демо →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <a href="../index.html" class="back-link">← Все платформы</a>
+    <span class="badge badge-blue" style="margin-bottom:12px;">РЕЧЕВОЙ ИНТЕЛЛЕКТ</span>
+    <h1>Речевая аналитика 100% звонков</h1>
+    <p>Каждый разговор расшифрован и разобран: контроль скрипта с точными цитатами и таймкодами, эмоции и намерения клиента, скоринг операторов и голосовой ИИ-бот. 95% точность ASR на обычных CPU, отклик меньше секунды, записи не покидают контур заказчика.</p>
+    <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+      <a href="../contact.html" class="btn btn-primary">Запросить демо</a>
+      <a href="#arch" class="btn btn-outline">Смотреть архитектуру</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE 3D -->
+<section class="section-blue" id="arch">
+  <div class="container">
+    <div style="margin-bottom:28px;">
+      <span class="badge badge-teal" style="margin-bottom:12px;">АРХИТЕКТУРА</span>
+      <h2>Три уровня платформы</h2>
+      <p style="max-width:760px;color:var(--text-muted);font-size:15px;line-height:1.6;margin-top:8px;">Сверху — шесть сервисов речевого интеллекта. В центре — ядро на векторной базе данных и стеке ИИ технологий. Снизу — корпоративные системы, к которым ядро подключается напрямую.</p>
+    </div>
+    <div class="arch-scene" id="archScene">
+  <div class="arch-stage-wrap">
+    <div class="arch-scene__stage" style="height:660px">
+      <div class="arch-floor"></div>
+      <div class="arch-glow"></div>
+      <div class="arch-cube " style="left:20px;top:8px;width:160px;height:160px;--lift:8px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Транскрибация речи</span><small>ASR 95% на CPU</small></div></div>
+      </div>
+      <div class="arch-cube " style="left:202px;top:8px;width:160px;height:160px;--delay:0.6s;--lift:11px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Определение интентов</span><small>намерения ≥ 90%</small></div></div>
+      </div>
+      <div class="arch-cube " style="left:384px;top:8px;width:160px;height:160px;--delay:1.1s;--lift:14px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Определение говорящего</span><small>по голосу</small></div></div>
+      </div>
+      <div class="arch-cube " style="left:566px;top:8px;width:160px;height:160px;--delay:1.7s;--lift:17px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Расширенная Аналитика v2.0</span><small>с цитатами</small></div></div>
+      </div>
+      <div class="arch-cube " style="left:748px;top:8px;width:160px;height:160px;--delay:2.2s;--lift:20px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Подготовка сценариев</span><small>No-Code обучение</small></div></div>
+      </div>
+      <div class="arch-cube " style="left:930px;top:8px;width:160px;height:160px;--delay:2.8s;--lift:23px;--d:80px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Голосовой ИИ-бот</span><small>60–80% заявок</small></div></div>
+      </div>
+      <div class="arch-beam" style="left:100.0px;top:88.0px;width:515.4px;--rot:28.0deg"></div>
+      <div class="arch-beam" style="left:282.0px;top:88.0px;width:364.8px;--rot:41.6deg"></div>
+      <div class="arch-beam" style="left:464.0px;top:88.0px;width:258.5px;--rot:69.4deg"></div>
+      <div class="arch-beam" style="left:646.0px;top:88.0px;width:258.5px;--rot:110.6deg"></div>
+      <div class="arch-beam" style="left:828.0px;top:88.0px;width:364.8px;--rot:138.4deg"></div>
+      <div class="arch-beam" style="left:1010.0px;top:88.0px;width:515.4px;--rot:152.0deg"></div>
+      <div class="arch-cube arch-cube--core" style="left:440px;top:330px;width:230px;height:230px;--delay:0.4s;--lift:26px;--d:115px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Векторная БД</span><small>Стек ИИ технологий</small></div></div>
+      </div>
+      <div class="arch-cube arch-cube--data" style="left:20px;top:330px;width:200px;height:200px;--delay:1.1s;--lift:6px;--d:100px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>1С · CRM · ERP · Биллинг</span><small>Данные</small></div></div>
+      </div>
+      <div class="arch-cube arch-cube--data" style="left:710px;top:330px;width:200px;height:200px;--delay:1.7s;--lift:6px;--d:100px">
+        <div class="arch-cube__face arch-cube__face--back"></div>
+        <div class="arch-cube__face arch-cube__face--side"></div>
+        <div class="arch-cube__face arch-cube__face--top"></div>
+        <div class="arch-cube__box"><div><span>Почта · База знаний · Даталейк</span><small>Каталог пользователей</small></div></div>
+      </div>
+    </div>
+    <div class="arch-legend">
+      <span><b>Верхний уровень:</b> сервисы речевого интеллекта</span>
+      <span><b>Центр:</b> векторная БД и стек ИИ</span>
+      <span><b>Нижний уровень:</b> корпоративные данные</span>
+    </div>
+    <button type="button" class="arch-toggle" id="archToggle" aria-pressed="false">Показать списком</button>
+  </div>
+  <div class="arch-flat">
+    <div class="arch-flat__row">
+      <div class="arch-flat__item">Транскрибация речи</div>
+      <div class="arch-flat__item">Определение интентов</div>
+      <div class="arch-flat__item">Определение говорящего</div>
+      <div class="arch-flat__item">Расширенная Аналитика v2.0</div>
+      <div class="arch-flat__item">Подготовка сценариев</div>
+      <div class="arch-flat__item">Голосовой ИИ-бот</div>
+    </div>
+    <div class="arch-flat__core">Векторная БД · Стек ИИ технологий</div>
+    <div class="arch-flat__row arch-flat__row--data">
+      <div class="arch-flat__item">1С · CRM · ERP · Биллинг</div>
+      <div class="arch-flat__item">Почта · База знаний · Даталейк</div>
+    </div>
+  </div>
+</div>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:20px;text-align:center;">Ядро работает в закрытом периметре: ASR 95% и NLU ≥ 90% без обязательных GPU, отклик &lt; 1 секунды.</p>
+  </div>
+</section>
+<!-- HYBRID ARCHITECTURE VS PURE LLM (Слайды 2, 3, 4, 5) -->
+<section style="background:#FFFFFF;padding:56px 0;border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="text-align:center;max-width:760px;margin:0 auto 36px;">
+      <span class="badge badge-teal" style="margin-bottom:12px;">ГИБРИДНЫЙ ПОДХОД</span>
+      <h2>Почему чистые LLM не решают задачи среднего и крупного бизнеса</h2>
+      <p style="color:var(--text-muted);font-size:15px;line-height:1.6;">Облачные LLM несут риски утечки ПДн, галлюцинируют и требуют колоссальных вычислительных мощностей. Наша платформа объединяет <strong>векторную базу данных</strong>, классический ML/NLU стек и Python-скрипты в закрытом контуре заказчика.</p>
+    </div>
+
+    <div class="compare-table-wrapper" style="overflow-x:auto;margin-bottom:36px;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">Критерий / Задача</th>
+            <th style="width:35%;background:#FEF2F2;color:#991B1B;">Чистые LLM (Claude, ChatGPT, Qwen)</th>
+            <th style="width:35%;background:#EFF6FF;color:#1D4ED8;">Гибридная платформа Sitel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Безопасность и регуляторы</strong></td>
+            <td>Передача данных в облако, риски 152-ФЗ</td>
+            <td style="background:#F0FDF4;font-weight:600;color:#166534;">100% в закрытом периметре (152-ФЗ, тайна)</td>
+          </tr>
+          <tr>
+            <td><strong>Требования к серверам</strong></td>
+            <td>Дорогие GPU-кластеры с сотнями ГБ VRAM</td>
+            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Базовые сервисы работают на обычных CPU без GPU</td>
+          </tr>
+          <tr>
+            <td><strong>Точность и галлюцинации</strong></td>
+            <td>Выдуманные факты, непредсказуемый результат</td>
+            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Детерминированное NLU, 95% точность ASR</td>
+          </tr>
+          <tr>
+            <td><strong>Скорость отклика</strong></td>
+            <td>Задержка 2–5 сек (непригодно для звонков)</td>
+            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Отклик &lt; 1 сек, мгновенная реакция на перебивания</td>
+          </tr>
+          <tr>
+            <td><strong>Работа с корпоративными БД</strong></td>
+            <td>Ограниченный контекст, сложность интеграции</td>
+            <td style="background:#F0FDF4;font-weight:600;color:#166534;">Векторная БД: нативный RAG по 1C, CRM, ERP, биллингу</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- 6 блоков архитектуры платформы речевого интеллекта (Слайд 5) -->
+    <div style="margin-top:20px;">
+      <h3 style="text-align:center;font-size:1.4rem;margin-bottom:24px;">Ядро платформы речевого интеллекта</h3>
+      <div class="features-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div class="card" style="border-top:4px solid var(--blue-600);">
+          <h4 style="margin-bottom:8px;">1. Векторная БД и Стек ИИ</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Ядро платформы. Объединяет базу знаний, даталейк, 1С, CRM и биллинг. Обеспечивает мгновенный семантический поиск без внешних обращений.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--blue-600);">
+          <h4 style="margin-bottom:8px;">2. Транскрибация речи (ASR)</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">95% точность распознавания речи. Локальная работа на CPU. Автоматическая нормализация показаний счетчиков, сумм, номеров счетов и дат.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--blue-600);">
+          <h4 style="margin-bottom:8px;">3. Определение интентов (NLU)</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Определение намерений ≥90%. Классификация тем, извлечение сущностей, самостоятельное подключение отраслевых словарей заказчика.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--teal-600);">
+          <h4 style="margin-bottom:8px;">4. Биометрия по голосу</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Идентификация участников разговора по акустическим слепкам. Автоматическое протоколирование совещаний и разделение каналов оператор/клиент.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--teal-600);">
+          <h4 style="margin-bottom:8px;">5. No-Code обучение бота</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Конструктор скриптов без программирования, валидация тупиков и связей, симуляция разговора голосом и текстом без телефонной линии.</p>
+        </div>
+        <div class="card" style="border-top:4px solid var(--teal-600);">
+          <h4 style="margin-bottom:8px;">6. Расширенная Аналитика v2.0</h4>
+          <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Смысловой аудит с точными цитатами, еженедельные дайджесты для руководства и непрерывное самообучение бота на базе лучших ответов.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- KEY FEATURES -->
+<section class="section-blue">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">ПЛЮШКИ ДЛЯ БИЗНЕСА</span>
+      <h2>Что получает бизнес от внедрения платформы</h2>
+      <p style="max-width:680px;margin:12px auto 0;color:var(--text-muted);">Быстрая окупаемость, снижение расходов на контакт-центр и рост автоматизации с каждого месяца работы.</p>
+    </div>
+    <div class="features-grid">
+      <div class="card">
+        <h4 style="margin-bottom:12px;">🎯 100% контроль коммуникаций</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Тотальный аудит диалогов вместо выборочной проверки 3–5%. Моментальное выявление точек конфликта и нарушений.</p>
+        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
+          <li>→ 95% точность распознавания речи на русском языке</li>
+          <li>→ Контроль скрипта: да/нет с точной цитатой и таймкодом</li>
+          <li>→ Объективные метрики: перебивания, темп речи, доля пауз</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:12px;">🤖 Умный голосовой бот</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Автоматизация до 60–80% рутинных вызовов без найма линейных операторов.</p>
+        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
+          <li>→ Мгновенная реакция на перебивание: бот замолкает и слушает клиента</li>
+          <li>→ Парсинг расписаний, начислений, балансов из 1С/CRM без задержек</li>
+          <li>→ Настройка сценариев без программирования (No-Code конструктор)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:12px;">⚡ 0 рублей затрат на GPU</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Базовые сервисы работают на обычных серверных процессорах CPU без покупки дорогостоящих видеокарт.</p>
+        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
+          <li>→ Быстрый старт на существующей инфраструктуре компании</li>
+          <li>→ Полная автономность без зависимости от зарубежных облаков</li>
+          <li>→ Для расширенной аналитики достаточно одной розничной RTX 4090</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="margin-bottom:12px;">📈 Самообучение и рост конверсии</h4>
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:12px;">Флагманская аналитика находит лучшие приемы топ-операторов и конвертирует их в новые навыки бота.</p>
+        <ul style="list-style:none;font-size:13px;color:var(--text-secondary);">
+          <li>→ Уровень автоматизации КЦ растет с каждым месяцем эксплуатации</li>
+          <li>→ Адресные рекомендации супервизорам для обучения сотрудников</li>
+          <li>→ Предиктивный прогноз оттока клиентов по тональности звонков</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT PROTOTYPES -->
+<section>
+  <div class="container">
+    <div style="margin-bottom:48px;">
+      <span class="badge badge-dark" style="margin-bottom:12px;">ИНТЕРФЕЙС</span>
+      <h2 style="margin-bottom:12px;">Что видит руководитель и супервайзер</h2>
+      <p style="max-width:720px;color:var(--text-muted);">Прототипы ключевых экранов. Финальные скриншоты появятся после утверждения дизайна.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+      <div class="proto-dashboard">
+        <div class="proto-tag"><span class="badge badge-amber">ПРОТОТИП</span></div>
+        <div class="proto-header">
+          <div class="proto-dot" style="background:#EF4444;"></div>
+          <div class="proto-dot" style="background:#F59E0B;"></div>
+          <div class="proto-dot" style="background:#22C55E;"></div>
+          <span style="color:#64748B;font-size:12px;margin-left:8px;">Карточка звонка</span>
+        </div>
+        <div class="proto-body" style="font-size:13px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:12px;">
+            <span style="font-weight:600;color:var(--text-primary);">Оператор: Мария К.</span>
+            <span class="badge badge-amber">62/100</span>
+          </div>
+          <div style="background:white;padding:10px;border-radius:6px;border:1px solid var(--border);margin-bottom:8px;">
+            <div style="color:var(--green-500);font-size:11px;font-weight:600;">✓ Приветствие</div>
+            <div style="color:var(--green-500);font-size:11px;font-weight:600;">✓ Представление</div>
+            <div style="color:var(--red-500);font-size:11px;font-weight:600;">✗ Условия акции (пропуск)</div>
+            <div style="color:var(--red-500);font-size:11px;font-weight:600;">✗ Работа с возражением</div>
+          </div>
+          <div style="font-size:11px;color:var(--text-muted);">Эмоции: клиент пришёл нейтрально → ушёл раздражён</div>
+        </div>
+      </div>
+      <div class="proto-dashboard">
+        <div class="proto-tag"><span class="badge badge-amber">ПРОТОТИП</span></div>
+        <div class="proto-header">
+          <div class="proto-dot" style="background:#EF4444;"></div>
+          <div class="proto-dot" style="background:#F59E0B;"></div>
+          <div class="proto-dot" style="background:#22C55E;"></div>
+          <span style="color:#64748B;font-size:12px;margin-left:8px;">Рейтинг операторов</span>
+        </div>
+        <div class="proto-body" style="font-size:13px;">
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+            <span>Алексей Д.</span><span style="color:var(--green-500);font-weight:700;">94/100</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+            <span>Ольга С.</span><span style="color:var(--green-500);font-weight:700;">88/100</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);">
+            <span>Иван Р.</span><span style="color:var(--amber-500);font-weight:700;">75/100</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:8px 0;background:#FEF2F2;margin:0 -20px;padding:8px 20px;border-radius:4px;">
+            <span>Мария К.</span><span style="color:var(--red-500);font-weight:700;">62/100 ⚠</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- MODULES ACCORDION -->
+<section class="section-blue">
+  <div class="container">
+    <div style="margin-bottom:48px;">
+      <span class="badge badge-blue" style="margin-bottom:12px;">МОДУЛИ ПЛАТФОРМЫ</span>
+      <h2>Полный функционал</h2>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+        <span class="title">Речевая аналитика 100% звонков</span>
+        <span class="badge badge-blue">БАЗОВЫЙ</span>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-content"><div class="accordion-body"><ul>
+        <li>Транскрибация 100% разговоров на CPU</li>
+        <li>Контроль скриптов: каждое правило — да/нет с цитатой и таймкодом</li>
+        <li>Эмоции: агрессия, удовлетворённость — у клиента и оператора</li>
+        <li>Перебивания, паузы, темп, доля речи оператора</li>
+        <li>Флаги комплаенса: запрещённые фразы, дисклеймеры</li>
+        <li>Темы обращений: что растёт, что появилось впервые</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+        <span class="title">ИИ-голосовой помощник</span>
+        <span class="badge badge-blue">БАЗОВЫЙ</span>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-content"><div class="accordion-body"><ul>
+        <li>Входящие и исходящие звонки</li>
+        <li>Создание скриптов без программирования</li>
+        <li>Лёгкая интеграция с существующими базами данных</li>
+        <li>Простое обучение отраслевой лексике</li>
+        <li>TTS с выбором голоса и интонационной адаптацией</li>
+        <li>Уступает слово при попытке прервать</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+        <span class="title">Скоринг операторов</span>
+        <span class="badge badge-blue">БАЗОВЫЙ</span>
+        <span class="badge badge-teal">+ ИНТЕЛЛЕКТ</span>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-content"><div class="accordion-body">
+        <p style="font-size:14px;margin-bottom:12px;color:var(--text-secondary);">Базовый: <strong>«у кого и где»</strong>. Интеллект: <strong style="color:var(--teal-600);">«почему и что делать»</strong>.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+          <div style="padding:12px;background:var(--bg);border-radius:8px;">
+            <div style="font-size:12px;font-weight:700;color:var(--blue-700);margin-bottom:8px;">БАЗОВЫЙ (ВСЕГДА)</div>
+            <div style="font-size:13px;">✓ Скрипт по каждому звонку<br>✓ Перебивания, паузы, доля речи<br>✓ Эмоциональная динамика<br>✓ Сводный балл, рейтинг<br>✓ Автовыявление аномалий</div>
+          </div>
+          <div style="padding:12px;background:var(--teal-100);border-radius:8px;">
+            <div style="font-size:12px;font-weight:700;color:var(--teal-600);margin-bottom:8px;">ИНТЕЛЛЕКТ (ПО ПОДПИСКЕ)</div>
+            <div style="font-size:13px;">✓ Чек-лист с цитатами<br>✓ Паттерны ошибок<br>✓ Рекомендации коучу<br>✓ Плейбук лучших<br>✓ Прогноз оттока</div>
+          </div>
+        </div>
+        <div style="padding:12px;background:var(--bg);border-radius:8px;font-size:13px;"><strong>Пример:</strong> «Мария: 62/100; в возражениях о цене не выявляет потребность — 14 из 17. Рекомендация: тренинг, 5 эталонных звонков приложены».</div>
+      </div></div>
+    </div>
+
+    <div class="accordion-item">
+      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+        <span class="title">Дашборды в реальном времени</span>
+        <span class="badge badge-blue">БАЗОВЫЙ</span>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-content"><div class="accordion-body"><ul>
+        <li>Инкрементально: каждый звонок сразу в аналитике</li>
+        <li>Тепловые карты тем, рейтинги, карта эскалаций</li>
+        <li>KPI-алерты с push-уведомлениями</li>
+        <li>Экспорт в PowerPoint/PDF по расписанию</li>
+      </ul></div></div>
+    </div>
+
+    <div class="accordion-item" style="border-color:var(--teal-500);">
+      <button class="accordion-btn" onclick="toggleAccordion(this)" aria-expanded="false">
+        <span class="title">Расширенная аналитика</span>
+        <span class="badge badge-teal">ИНТЕЛЛЕКТ</span>
+        <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="accordion-content"><div class="accordion-body">
+        <p style="font-size:14px;margin-bottom:12px;">Большая языковая модель (32+ млрд параметров). Объясняет причины, даёт рекомендации, прогнозирует поведение клиентов.</p>
+        <ul>
+          <li>Полный чек-лист с цитатами-обоснованиями</li>
+          <li>Паттерны проблем по сотням звонков</li>
+          <li>Еженедельные дайджесты для руководства</li>
+          <li>Прогноз оттока клиентов</li>
+          <li><strong>Самообучение бота:</strong> лучшие ответы → навыки</li>
+        </ul>
+        <div style="margin-top:12px;padding:12px;background:var(--teal-100);border-radius:8px;font-size:13px;"><strong style="color:var(--teal-600);">Важно:</strong> отключение подписки не приводит к потере данных.</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section>
+  <div class="container" style="text-align:center;">
+    <h2 style="margin-bottom:16px;">Готовы послушать, что говорят ваши звонки?</h2>
+    <p style="max-width:640px;margin:0 auto 24px;color:var(--text-muted);">Подключим транскрибацию к существующей АТС и покажем отчёт по вашим же записям за 2–4 недели.</p>
+    <a href="../contact.html" class="btn btn-primary">Запросить демо</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top-grid">
+      
+      <!-- Колонка 1: Контакты -->
+      <div class="footer-info-block">
+        <h4>ПРЯМАЯ СВЯЗЬ</h4>
+        <div class="contact-item">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value"><span class="badge badge-template">НЕ ЗАПОЛНЕНО</span></span>
+        </div>
+      </div>
+      
+      <!-- Колонка 2: Платформы -->
+      <div class="footer-info-block">
+        <h4>ПЛАТФОРМЫ</h4>
+        <a href="speech.html">Речевая аналитика</a>
+        <a href="auto-order.html">Умный автозаказ</a>
+        <a href="../architecture.html">Архитектура</a>
+        <a href="auto-order.html">Оборудование</a>
+      </div>
+
+      <!-- Колонка 3: Компания -->
+      <div class="footer-info-block">
+        <h4>КОМПАНИЯ</h4>
+        <a href="../cases.html">Отрасли</a>
+        <a href="../security.html">Безопасность</a>
+      </div>
+
+      <!-- Колонка 4: Документы -->
+      <div class="footer-info-block">
+        <h4>ДОКУМЕНТЫ</h4>
+        <a href="../privacy.html">Политика ПД</a>
+        <a href="../privacy.html">Пользовательское соглашение</a>
+      </div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <span>© 2026 Sitel</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// Mobile menu
+function closeMobile() { 
+  document.getElementById('mobile-menu').classList.remove('open'); 
+}
+
+// Dropdown
+function toggleDropdown(id) {
+  const dropdown = document.getElementById(id);
+  if (!dropdown) return;
+  dropdown.classList.toggle('open');
+}
+
+document.addEventListener('click', (e) => {
+  document.querySelectorAll('.dropdown.open').forEach(d => {
+    if (!d.contains(e.target)) d.classList.remove('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#' || this.getAttribute('onclick')) return;
+    const target = document.querySelector(href);
+    if (target) { 
+      e.preventDefault(); 
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); 
+      closeMobile(); 
+    }
+  });
+});
+
+// Accordion (modules)
+function toggleAccordion(btn) {
+  const content = btn.nextElementSibling;
+  const arrow = btn.querySelector('.arrow');
+  if (!content || !arrow) return;
+  const isOpen = content.classList.contains('open');
+  document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open'));
+  document.querySelectorAll('.arrow').forEach(a => a.classList.remove('open'));
+  btn.setAttribute('aria-expanded', !isOpen);
+  if (!isOpen) { content.classList.add('open'); arrow.classList.add('open'); }
+}
+
+// Architecture: 3D schema <-> readable list
+(function () {
+  const scene = document.getElementById('archScene');
+  const btn = document.getElementById('archToggle');
+  if (!scene || !btn) return;
+  btn.addEventListener('click', function () {
+    const flat = scene.classList.toggle('is-flat');
+    btn.setAttribute('aria-pressed', flat ? 'true' : 'false');
+    btn.textContent = flat ? 'Показать схемой' : 'Показать списком';
+  });
+})();
+
+</script>
+</body>
+</html>
