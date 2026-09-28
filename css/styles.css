@@ -171,7 +171,15 @@ section + section { border-top: 1px solid var(--border); }
 .dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown-menu a { display: block; padding: 10px 16px; color: var(--text-secondary); text-decoration: none; font-size: 14px; }
 .dropdown-menu a:hover { background: var(--bg); color: var(--blue-700); }
-.dropdown-menu a.active { background: var(--blue-50); color: var(--blue-700); }
+.dropdown-menu a.active { background: var(--blue-50); color: var(--blue-700); font-weight: 600; padding-left: 12px; border-left: 4px solid var(--blue-600); }
+/* Подсветка активной платформы во всех состояниях меню:
+   .nav-active — активный пункт верхнего меню, .has-active — сама кнопка
+   «Платформы», когда открыта любая страница платформы (иначе в закрытом
+   меню непонятно, какой пункт выбран). */
+.nav-links a.nav-active { color: var(--blue-700); font-weight: 600; }
+.dropdown.has-active > .dropdown-toggle { color: var(--blue-700); font-weight: 600; }
+.dropdown.has-active > .dropdown-toggle::after { color: var(--blue-500); }
+.mobile-menu a.active { color: var(--blue-700); font-weight: 600; }
 
 .header-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
@@ -625,7 +633,7 @@ section + section { border-top: 1px solid var(--border); }
 }
 .arch-toggle:hover { color: var(--blue-700); border-color: var(--blue-500); }
 .arch-flat { display: none; }
-.arch-scene.is-flat { padding: 0; }
+.arch-scene.is-flat { padding: 0; width: auto; margin-left: 0; }
 .arch-scene.is-flat .arch-stage-wrap { display: none; }
 .arch-scene.is-flat .arch-flat { display: block; }
 .arch-flat__row {
@@ -645,6 +653,20 @@ section + section { border-top: 1px solid var(--border); }
   color: var(--text-primary);
 }
 .arch-flat__row--data .arch-flat__item { border-left-color: var(--blue-900); }
+/* 6 карточек сервисов и 2 карточки данных — фиксированные сетки:
+   repeat(auto-fit, minmax(220px,1fr)) при 1152px даёт 4 колонки, и в строке
+   из 3 и 2 карточек оставались пустые ячейки справа. */
+@media (min-width: 901px) {
+  .arch-flat__row--services { grid-template-columns: repeat(3, 1fr); }
+  .arch-flat__row--data { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .arch-flat__row--services { grid-template-columns: repeat(2, 1fr); }
+  .arch-flat__row--data { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  .arch-flat__row--services { grid-template-columns: 1fr; }
+}
 .arch-flat__core {
   text-align: center;
   background: var(--blue-50);
@@ -656,8 +678,38 @@ section + section { border-top: 1px solid var(--border); }
   margin-bottom: 18px;
 }
 .arch-flat__note { font-size: 13px; color: var(--text-muted); text-align: center; }
-/* Адаптив: 3D-сцена фиксированной ширины, поэтому уменьшаем её масштабом,
-   а на планшетах и телефонах переключаем схему в плоский список. */
+/* Адаптив 3D-сцены. Плоскость наклонена (rotateX+rotateZ), поэтому её
+   проекция шире макета: ~663px вправо и ~553px влево от центра при scale(1),
+   итого ~1216px. Контейнер .container = 1200px (полезно 1152px), поэтому:
+   1) на широких экранах сцена выводится за границы контейнера (full-bleed),
+      иначе overflow-x: clip срезал бы куб «Транскрибация речи» и правый
+      угол пола;
+   2) там, где места не хватает, сцена уменьшается масштабом --sscale.
+   Порядок right→left: каждое следующее правило перекрывает предыдущее. */
+@media (min-width: 1201px) {
+  .arch-scene {
+    width: min(100vw - 64px, 1440px);
+    margin-left: calc(50% - min(100vw - 64px, 1440px) / 2);
+    /* спроецированная плоскость выступает за нижний край бокса сцены
+       (rotateX приближает ближний край), поэтому добавляем воздух под
+       переключателем, чтобы пол не ложился на соседний текст */
+    padding-bottom: 56px;
+  }
+  /* Координаты кубов в speech.html заданы под плоскость шириной 1152px
+     (полезная ширина .container). Фиксируем ширину сцены, чтобы при
+     выносе за контейнер композиция осталась в центре страницы. */
+  .arch-stage-wrap { width: 1152px; margin: 0 auto; }
+  /* в режиме «списком» карточки должны оставаться в колонке текста,
+     широкая сцена нужна только 3D-плоскости */
+  .arch-flat { max-width: 1152px; margin-left: auto; margin-right: auto; }
+  .arch-scene__stage { --sscale: .82; }        /* 1201–1299px */
+}
+@media (min-width: 1300px) {
+  .arch-scene__stage { --sscale: .9; }         /* 1300–1429px: ~597px от центра */
+}
+@media (min-width: 1430px) {
+  .arch-scene__stage { --sscale: 1; }          /* ≥1430px: полные 663px помещаются */
+}
 @media (max-width: 1200px) { .arch-scene__stage { --sscale: .84; } }
 @media (max-width: 1024px) { .arch-scene__stage { --sscale: .7; } }
 @media (max-width: 900px) {

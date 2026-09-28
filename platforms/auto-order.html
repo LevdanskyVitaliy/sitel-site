@@ -252,10 +252,10 @@ section + section { border-top:1px solid var(--border); }
     </a>
     
     <nav class="nav-links">
-      <div class="dropdown" id="products-dropdown">
+      <div class="dropdown has-active" id="products-dropdown">
         <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
         <div class="dropdown-menu">
-          <a href="../index.html">Речевая аналитика</a>
+          <a href="speech.html">Речевая аналитика</a>
           <a href="auto-order.html" class="active">Умный автозаказ</a>
           <a href="docs.html">Документооборот</a>
         </div>
@@ -278,8 +278,8 @@ section + section { border-top:1px solid var(--border); }
   <div class="mobile-menu" id="mobile-menu">
     <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
     <div class="mobile-submenu">
-      <a href="../index.html" onclick="closeMobile()">Речевая аналитика</a>
-      <a href="auto-order.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Умный автозаказ</a>
+      <a href="speech.html" onclick="closeMobile()">Речевая аналитика</a>
+      <a href="auto-order.html" class="active" onclick="closeMobile()">Умный автозаказ</a>
       <a href="docs.html" onclick="closeMobile()">Документооборот</a>
     </div>
     <a href="../cases.html" onclick="closeMobile()">Отрасли</a>
@@ -435,7 +435,7 @@ section + section { border-top:1px solid var(--border); }
       <!-- Колонка 2: Платформы -->
       <div class="footer-info-block">
         <h4>ПЛАТФОРМЫ</h4>
-        <a href="../index.html">Речевая аналитика</a>
+        <a href="speech.html">Речевая аналитика</a>
         <a href="auto-order.html">Умный автозаказ</a>
         <a href="../architecture.html">Архитектура</a>
         <a href="auto-order.html">Оборудование</a>

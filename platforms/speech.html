@@ -32,7 +32,7 @@
     </a>
     
     <nav class="nav-links">
-      <div class="dropdown" id="products-dropdown">
+      <div class="dropdown has-active" id="products-dropdown">
         <button class="dropdown-toggle" onclick="toggleDropdown('products-dropdown')" aria-expanded="false">Платформы</button>
         <div class="dropdown-menu">
           <a href="speech.html" class="active">Речевая аналитика</a>
@@ -58,7 +58,7 @@
   <div class="mobile-menu" id="mobile-menu">
     <strong style="display:block;padding:12px 0;font-size:13px;color:var(--text-light);text-transform:uppercase;">Платформы</strong>
     <div class="mobile-submenu">
-      <a href="speech.html" onclick="closeMobile()" style="color:var(--blue-700);font-weight:600;">Речевая аналитика</a>
+      <a href="speech.html" class="active" onclick="closeMobile()">Речевая аналитика</a>
       <a href="auto-order.html" onclick="closeMobile()">Умный автозаказ</a>
       <a href="docs.html" onclick="closeMobile()">Документооборот</a>
     </div>
@@ -165,7 +165,7 @@
     <button type="button" class="arch-toggle" id="archToggle" aria-pressed="false">Показать списком</button>
   </div>
   <div class="arch-flat">
-    <div class="arch-flat__row">
+    <div class="arch-flat__row arch-flat__row--services">
       <div class="arch-flat__item">Транскрибация речи</div>
       <div class="arch-flat__item">Определение интентов</div>
       <div class="arch-flat__item">Определение говорящего</div>
